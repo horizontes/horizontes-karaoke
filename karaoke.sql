@@ -58,7 +58,7 @@ CREATE  TABLE IF NOT EXISTS box (
   location_id INT(11) NOT NULL ,
   phone VARCHAR(100) NOT NULL ,
   score INT(1) NOT NULL,
-  bussy BIT(1) NOT NULL DEFAULT '0',
+  bussy BIT(1) NOT NULL ,
   CONSTRAINT box_pk PRIMARY KEY (id)
  );
 
@@ -105,7 +105,7 @@ CREATE TABLE booking (
 CREATE TABLE song (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(200) NOT NULL,
-	singer_band (200) NOT NULL,
+	singer_band varchar(200) NOT NULL,
 	description text NOT NULL,
 	duration int NOT NULL,
 	code int NOT NULL,
