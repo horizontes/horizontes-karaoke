@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    @songs = Song.where(:genere_id => true).paginate(:page => params[:page]).order('song_id DESC')
   end
 
   # GET /songs/1
@@ -71,4 +71,11 @@ class SongsController < ApplicationController
     def song_params
       params.require(:song).permit(:song_id, :name, :singer_band, :description, :duration, :genere_id, :code, :rate)
     end
+    
+    
+
+  def search
+    @song = Song.search(params[:search])
+   end
+
 end

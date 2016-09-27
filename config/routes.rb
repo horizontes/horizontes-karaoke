@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'application_karaoke/index', :to => redirect('karaoke_app/readme.html')
 
   get 'html/index'
+  get 'html/menu'
 
   #get '/index', :to => redirect('/html/index')
   resources :employees
